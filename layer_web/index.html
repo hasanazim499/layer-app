@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1B4332" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>LAYER</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="catalog.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Auth -->
+    <section id="screen-auth" class="screen">
+      <div class="center-pad">
+        <h1 class="logo">LAYER</h1>
+        <p class="sub">Perfume layering</p>
+        <input id="auth-email" type="email" placeholder="Email" />
+        <input id="auth-phone" type="tel" placeholder="Phone" />
+        <button class="btn primary" onclick="doAuth()">Create account</button>
+        <div class="or">or</div>
+        <button class="btn outline" onclick="doAuth('google')">Continue with Google</button>
+        <button class="btn outline" onclick="doAuth('apple')">Continue with Apple</button>
+        <button class="btn outline" onclick="doAuth('yahoo')">Continue with Yahoo</button>
+        <p class="hint">Location used only for weather layers.</p>
+      </div>
+    </section>
+
+    <!-- Prefs -->
+    <section id="screen-prefs" class="screen hidden">
+      <header class="top">What do you like?</header>
+      <p class="pad-side muted">Pick notes & accords</p>
+      <div id="pref-chips" class="chips"></div>
+      <div class="bottom-bar">
+        <button class="btn primary" id="prefs-continue" disabled onclick="savePrefs()">Continue</button>
+      </div>
+    </section>
+
+    <!-- Shell -->
+    <section id="screen-shell" class="screen hidden">
+      <div id="page-home" class="page">
+        <header class="top" id="home-weather">Today</header>
+        <div class="pad">
+          <h2 class="section-title">LAYER OF THE DAY</h2>
+          <p class="muted" id="home-hint">Add 2+ bottles to get a layer.</p>
+          <div id="layer-cards"></div>
+          <button class="btn primary hidden" id="wear-btn" onclick="wearLayer()">Wear this</button>
+          <h3 class="section-title mt">Occasions</h3>
+          <div id="occasion-chips" class="chips"></div>
+        </div>
+      </div>
+
+      <div id="page-collection" class="page hidden">
+        <header class="top">My Collection</header>
+        <div class="pad">
+          <p class="muted" id="owned-count">0 owned</p>
+          <div id="owned-list"></div>
+          <button class="btn primary" onclick="openBrandIndex()">+ Add perfume</button>
+        </div>
+      </div>
+
+      <div id="page-occasions" class="page hidden">
+        <header class="top">Occasions</header>
+        <div id="occasion-grid" class="grid-2 pad"></div>
+      </div>
+
+      <div id="page-profile" class="page hidden">
+        <header class="top">Profile</header>
+        <div class="pad profile">
+          <div class="avatar">L</div>
+          <p id="profile-email" class="center"></p>
+          <div class="card">
+            <div class="row-between"><span>Weather</span><span id="profile-weather"></span></div>
+            <div class="row-between"><span>Liked notes</span><span id="profile-likes"></span></div>
+            <div class="row-between"><span>Owned</span><span id="profile-owned"></span></div>
+          </div>
+          <button class="btn outline" onclick="resetAll()">Reset (dev)</button>
+        </div>
+      </div>
+
+      <nav class="tabbar">
+        <button class="tab active" data-page="home" onclick="goPage('home')">Home</button>
+        <button class="tab" data-page="collection" onclick="goPage('collection')">Collection</button>
+        <button class="tab" data-page="occasions" onclick="goPage('occasions')">Occasions</button>
+        <button class="tab" data-page="profile" onclick="goPage('profile')">Profile</button>
+      </nav>
+    </section>
+
+    <section id="screen-brands" class="screen hidden">
+      <header class="top">
+        <button class="back" onclick="closeToCollection()">←</button>
+        <span>Brands A–Z</span>
+      </header>
+      <div id="letter-bar" class="letter-bar"></div>
+      <div id="brand-list"></div>
+    </section>
+
+    <section id="screen-brand-bottles" class="screen hidden">
+      <header class="top">
+        <button class="back" onclick="openBrandIndex()">←</button>
+        <span id="brand-title">Brand</span>
+      </header>
+      <div id="brand-bottles" class="pad"></div>
+    </section>
+
+    <section id="screen-detail" class="screen hidden">
+      <header class="top">
+        <button class="back" id="detail-back" onclick="backFromDetail()">←</button>
+        <span id="detail-title">Bottle</span>
+      </header>
+      <div class="pad" id="detail-body"></div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
