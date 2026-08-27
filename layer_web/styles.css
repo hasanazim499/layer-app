@@ -60,7 +60,7 @@ input[type="email"], input[type="tel"], input[type="search"] {
 .chip { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 9px 14px; font-size: 0.82rem; cursor: pointer; font-family: inherit; }
 .chip.on { background: var(--accent); color: #f7f1e6; border-color: var(--accent); }
 .bottom-bar { position: fixed; left: 0; right: 0; bottom: 0; max-width: 480px; margin: 0 auto; padding: 12px 16px 20px; background: linear-gradient(transparent, var(--bg) 28%); }
-.tabbar { position: fixed; left: 0; right: 0; bottom: 0; max-width: 480px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); background: #1c1914; padding: 8px 0 calc(10px + env(safe-area-inset-bottom)); }
+.tabbar { position: fixed; left: 0; right: 0; bottom: 0; max-width: 480px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); background: #1c1914; padding: 8px 0 calc(10px + env(safe-area-inset-bottom)); }
 .tab { border: 0; background: none; padding: 8px 4px; font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: #8a8174; cursor: pointer; font-family: inherit; }
 .tab.active { color: #f0e4cc; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin-bottom: 10px; }
