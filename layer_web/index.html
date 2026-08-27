@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#1c1914" />
+  <meta name="theme-color" content="#1a1814" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>LAYER</title>
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <script src="catalog.js"></script>
 </head>
 <body>
@@ -37,15 +37,29 @@
 
     <section id="screen-shell" class="screen hidden">
       <div id="page-home" class="page">
-        <div class="pad">
-          <div class="hero-weather">
-            <div class="kicker">Layer of the day</div>
-            <h1 id="home-weather">Today</h1>
-            <p id="home-hint">Add bottles to get a layer.</p>
+        <div class="home-wrap">
+          <div class="status-row"><span id="clock">9:41</span><span class="status-icons">●●●</span></div>
+          <p class="greet" id="home-greet">Good morning</p>
+          <h1 class="headline">How do you want<br>to feel today?</h1>
+
+          <div class="glass hero">
+            <p class="hero-prompt" id="weather-line">It's humid and sunny. Try something fresh.</p>
+            <div class="hero-row">
+              <button class="icon-round" aria-label="mood">◎</button>
+              <button class="cta-pill" onclick="wearLayer()">+ Create My Layer</button>
+            </div>
           </div>
+
+          <div class="vibe-row" id="vibe-row"></div>
+
+          <div class="glass search-card">
+            <p class="explore-kicker">Discover by Mood</p>
+            <h2 class="explore-title">Search a mood, memory</h2>
+            <input id="mood-search" type="search" placeholder="Search a mood, memory" oninput="filterMood(this.value)" />
+          </div>
+
+          <h3 class="section-h">Today’s layers</h3>
           <div id="layer-cards"></div>
-          <button class="btn primary hidden" id="wear-btn" onclick="wearLayer()">Wear this</button>
-          <div id="occasion-chips" class="hidden"></div>
         </div>
       </div>
 
@@ -56,10 +70,6 @@
           <div id="owned-list"></div>
           <button class="btn primary" onclick="openBrandIndex()">+ Add perfume</button>
         </div>
-      </div>
-
-      <div id="page-occasions" class="page hidden">
-        <div id="occasion-grid"></div>
       </div>
 
       <div id="page-profile" class="page hidden">
@@ -78,7 +88,7 @@
 
       <nav class="tabbar">
         <button class="tab active" data-page="home" onclick="goPage('home')">Home</button>
-        <button class="tab" data-page="collection" onclick="goPage('collection')">Collection</button>
+        <button class="tab" data-page="collection" onclick="goPage('collection')">My Collection</button>
         <button class="tab" data-page="profile" onclick="goPage('profile')">Profile</button>
       </nav>
     </section>
@@ -110,6 +120,6 @@
   </div>
 
   <div id="toast" class="toast hidden"></div>
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
