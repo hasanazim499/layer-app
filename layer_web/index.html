@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#1c1914" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>LAYER</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <script src="catalog.js"></script>
 </head>
 <body>
@@ -45,8 +45,6 @@
           </div>
           <div id="layer-cards"></div>
           <button class="btn primary hidden" id="wear-btn" onclick="wearLayer()">Wear this</button>
-          <h3 class="section-title mt">Occasions</h3>
-          <div id="occasion-chips" class="chips"></div>
         </div>
       </div>
 
@@ -57,11 +55,6 @@
           <div id="owned-list"></div>
           <button class="btn primary" onclick="openBrandIndex()">+ Add perfume</button>
         </div>
-      </div>
-
-      <div id="page-occasions" class="page hidden">
-        <header class="top">Occasions</header>
-        <div id="occasion-grid" class="grid-2 pad"></div>
       </div>
 
       <div id="page-profile" class="page hidden">
@@ -81,7 +74,6 @@
       <nav class="tabbar">
         <button class="tab active" data-page="home" onclick="goPage('home')">Home</button>
         <button class="tab" data-page="collection" onclick="goPage('collection')">Collection</button>
-        <button class="tab" data-page="occasions" onclick="goPage('occasions')">Occasions</button>
         <button class="tab" data-page="profile" onclick="goPage('profile')">Profile</button>
       </nav>
     </section>
@@ -113,6 +105,6 @@
   </div>
 
   <div id="toast" class="toast hidden"></div>
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
