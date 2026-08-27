@@ -8,6 +8,14 @@ body.wx-hot .sky{background:radial-gradient(circle at 86% 6%,rgba(255,210,80,.5)
 body.wx-mild .sky{background:radial-gradient(circle at 80% 10%,rgba(255,236,180,.22),transparent 46%),linear-gradient(180deg,#2a241c 0%,#141311 60%)}
 body.wx-cool .sky{background:radial-gradient(circle at 18% 0,rgba(160,190,210,.26),transparent 48%),linear-gradient(180deg,#1c2428 0%,#121416 60%)}
 body.wx-cold .sky{background:radial-gradient(circle at 70% 0,rgba(200,220,255,.2),transparent 50%),linear-gradient(180deg,#1a2230 0%,#0e1116 60%)}
+body.wx-cloudy .sky{background:linear-gradient(180deg,#3a3d44 0%,#1a1b1e 58%)}
+body.wx-partly .sky{background:radial-gradient(circle at 78% 8%,rgba(255,220,140,.28),transparent 42%),linear-gradient(180deg,#3d3a36 0%,#161513 60%)}
+body.wx-rain .sky{background:repeating-linear-gradient(105deg,transparent 0 7px,rgba(180,200,220,.07) 7px 8px),linear-gradient(180deg,#1c2836 0%,#0e1218 62%)}
+body.wx-thunder .sky{background:radial-gradient(circle at 70% 0,rgba(170,140,255,.22),transparent 40%),linear-gradient(180deg,#1a1428 0%,#0b0a12 62%)}
+body.wx-snow .sky{background:radial-gradient(circle at 20% 10%,rgba(255,255,255,.18),transparent 28%),radial-gradient(circle at 80% 30%,rgba(255,255,255,.12),transparent 22%),linear-gradient(180deg,#2a3544 0%,#121820 62%)}
+body.wx-wind .sky{background:repeating-linear-gradient(18deg,transparent 0 18px,rgba(220,230,240,.06) 18px 20px),linear-gradient(180deg,#2a3338 0%,#121516 60%)}
+body.wx-fog .sky{background:linear-gradient(180deg,rgba(200,205,210,.35) 0%,#1a1c1e 70%)}
+body.wx-haze .sky{background:radial-gradient(circle at 50% 0,rgba(210,160,80,.28),transparent 50%),linear-gradient(180deg,#3a2e1c 0%,#16130f 62%)}
 #app{min-height:100%;max-width:430px;margin:0 auto;position:relative;z-index:1}
 .screen{min-height:100vh;padding-bottom:110px}.hidden{display:none!important}
 .logo{font-size:2.2rem;letter-spacing:.28em;font-weight:600;text-align:center}
