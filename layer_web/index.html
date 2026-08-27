@@ -25,7 +25,6 @@
         <p class="hint">Location used only for weather layers.</p>
       </div>
     </section>
-
     <section id="screen-prefs" class="screen hidden">
       <header class="top">What do you like?</header>
       <p class="pad-side muted">Pick notes & accords</p>
@@ -34,35 +33,32 @@
         <button class="btn primary" id="prefs-continue" disabled onclick="savePrefs()">Continue</button>
       </div>
     </section>
-
     <section id="screen-shell" class="screen hidden">
       <div id="page-home" class="page">
         <div class="home-wrap">
           <div class="status-row"><span id="clock">9:41</span><span class="status-icons">●●●</span></div>
           <p class="greet" id="home-greet">Good morning</p>
           <h1 class="headline">How do you want<br>to feel today?</h1>
-
           <div class="glass hero">
             <p class="hero-prompt" id="weather-line">It's humid and sunny. Try something fresh.</p>
             <div class="hero-row">
-              <button class="icon-round" aria-label="mood">◎</button>
+              <button class="icon-round">◎</button>
               <button class="cta-pill" onclick="wearLayer()">+ Create My Layer</button>
             </div>
           </div>
-
           <div class="vibe-row" id="vibe-row"></div>
-
           <div class="glass search-card">
             <p class="explore-kicker">Discover by Mood</p>
             <h2 class="explore-title">Search a mood, memory</h2>
             <input id="mood-search" type="search" placeholder="Search a mood, memory" oninput="filterMood(this.value)" />
           </div>
-
           <h3 class="section-h">Today’s layers</h3>
           <div id="layer-cards"></div>
+          <span id="home-weather" class="hidden"></span>
+          <span id="home-hint" class="hidden"></span>
+          <button id="wear-btn" class="hidden"></button>
         </div>
       </div>
-
       <div id="page-collection" class="page hidden">
         <header class="top">My Collection</header>
         <div class="pad">
@@ -71,7 +67,6 @@
           <button class="btn primary" onclick="openBrandIndex()">+ Add perfume</button>
         </div>
       </div>
-
       <div id="page-profile" class="page hidden">
         <header class="top">Profile</header>
         <div class="pad profile">
@@ -85,41 +80,27 @@
           <button class="btn outline" onclick="resetAll()">Reset (dev)</button>
         </div>
       </div>
-
       <nav class="tabbar">
         <button class="tab active" data-page="home" onclick="goPage('home')">Home</button>
         <button class="tab" data-page="collection" onclick="goPage('collection')">My Collection</button>
         <button class="tab" data-page="profile" onclick="goPage('profile')">Profile</button>
       </nav>
     </section>
-
     <section id="screen-brands" class="screen hidden">
-      <header class="top">
-        <button class="back" onclick="closeToCollection()">←</button>
-        <span>Brands A–Z</span>
-      </header>
-      <div id="letter-bar" class="letter-bar"></div>
-      <div id="brand-list"></div>
+      <header class="top"><button class="back" onclick="closeToCollection()">←</button><span>Brands A–Z</span></header>
+      <div id="letter-bar" class="letter-bar"></div><div id="brand-list"></div>
     </section>
-
     <section id="screen-brand-bottles" class="screen hidden">
-      <header class="top">
-        <button class="back" onclick="openBrandIndex()">←</button>
-        <span id="brand-title">Brand</span>
-      </header>
+      <header class="top"><button class="back" onclick="openBrandIndex()">←</button><span id="brand-title">Brand</span></header>
       <div id="brand-bottles" class="pad"></div>
     </section>
-
     <section id="screen-detail" class="screen hidden">
-      <header class="top">
-        <button class="back" id="detail-back" onclick="backFromDetail()">←</button>
-        <span id="detail-title">Bottle</span>
-      </header>
+      <header class="top"><button class="back" onclick="backFromDetail()">←</button><span id="detail-title">Bottle</span></header>
       <div class="pad" id="detail-body"></div>
     </section>
   </div>
-
   <div id="toast" class="toast hidden"></div>
   <script src="app.js?v=5"></script>
+  <script src="ui-home.js?v=5"></script>
 </body>
 </html>
