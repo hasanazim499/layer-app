@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#1B4332" />
+  <meta name="theme-color" content="#1c1914" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>LAYER</title>
   <link rel="stylesheet" href="styles.css" />
@@ -11,7 +11,6 @@
 </head>
 <body>
   <div id="app">
-    <!-- Auth -->
     <section id="screen-auth" class="screen">
       <div class="center-pad">
         <h1 class="logo">LAYER</h1>
@@ -27,7 +26,6 @@
       </div>
     </section>
 
-    <!-- Prefs -->
     <section id="screen-prefs" class="screen hidden">
       <header class="top">What do you like?</header>
       <p class="pad-side muted">Pick notes & accords</p>
@@ -37,13 +35,14 @@
       </div>
     </section>
 
-    <!-- Shell -->
     <section id="screen-shell" class="screen hidden">
       <div id="page-home" class="page">
-        <header class="top" id="home-weather">Today</header>
         <div class="pad">
-          <h2 class="section-title">LAYER OF THE DAY</h2>
-          <p class="muted" id="home-hint">Add 2+ bottles to get a layer.</p>
+          <div class="hero-weather">
+            <div class="kicker">Layer of the day</div>
+            <h1 id="home-weather">Today</h1>
+            <p id="home-hint">Add bottles to get a layer.</p>
+          </div>
           <div id="layer-cards"></div>
           <button class="btn primary hidden" id="wear-btn" onclick="wearLayer()">Wear this</button>
           <h3 class="section-title mt">Occasions</h3>
